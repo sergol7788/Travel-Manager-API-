@@ -36,10 +36,7 @@ namespace HotelManager
             var applicationId = Configuration["ApplicationId"];
             var secretKey = Configuration["SecretKey"];
 
-            services.AddScoped<ISecretService, SecretService>(_ => new SecretService(applicationId,
-                                                                                        secretKey,
-                                                                                        secretEndPoint));
-
+          
             var connection = Configuration["SqlConnect"];
 
             services.AddDbContext<ApplicationDatabaseContext>(options => {
